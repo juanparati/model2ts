@@ -35,7 +35,7 @@
         },
         "laravel": {
             "providers": [
-                "Juanparati\\Model2TS\\Model2TSServiceProvider"
+                "Juanparati\\Model2TS\\Model2TsServiceProvider"
             ]
         }
     },
