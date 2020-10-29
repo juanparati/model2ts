@@ -1,10 +1,10 @@
-# Model2TS
+# Model2Ts
 
 ## What is it?
 
 An artisan command that translates Eloquent models into Typescript interfaces.
 
-Model2TS checks the model structure using reflection techniques, and the related table structure in order to properly infer the correct types.
+Model2Ts checks the model structure using reflection techniques, and the related table structure in order to properly infer the correct types.
 
 ## Installation
 
