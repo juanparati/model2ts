@@ -1,23 +1,17 @@
 <?php
 
 
-namespace Juanparati\Sql2Ts\Tests\Mappers;
+namespace Juanparati\Model2Ts\Tests\Mappers;
 
 
 use Doctrine\DBAL\Schema\Column;
-use Doctrine\DBAL\Schema\Schema;
-use Doctrine\DBAL\Types\BlobType;
 use Doctrine\DBAL\Types\BooleanType;
 use Doctrine\DBAL\Types\IntegerType;
 use Doctrine\DBAL\Types\StringType;
 use Doctrine\DBAL\Types\TextType;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Juanparati\Model2Ts\Mappers\SqlMapper;
 use Juanparati\Model2Ts\Tests\BaseTest;
 use Juanparati\Model2Ts\Tests\TestModels\FirstModel;
-
-
 
 
 /**
@@ -28,6 +22,11 @@ use Juanparati\Model2Ts\Tests\TestModels\FirstModel;
 class SQLMapperTest extends BaseTest
 {
 
+    /**
+     * Generic test.
+     *
+     * @throws \Doctrine\DBAL\Exception
+     */
     public function testGeneric() {
 
         $columns = [

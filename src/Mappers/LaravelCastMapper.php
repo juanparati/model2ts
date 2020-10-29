@@ -68,15 +68,9 @@ class LaravelCastMapper implements Mapper
     public function mapSchema(array $schema) : array {
 
         foreach ($this->getCastsValues() as $key => $type) {
-            if (!isset($schema[$key]))
-                continue;
 
-            if (!is_string($type) || !isset(static::LARAVEL_CAST_MAP[$type])) {
-                $schema[$key]['may_struct'] = true;
-                continue;
-            }
-
-            $schema[$key]['type'] = static::LARAVEL_CAST_MAP[$type];
+            $schema[$key]['may_struct'] = !is_string($type) || !isset(static::LARAVEL_CAST_MAP[$type]);
+            $schema[$key]['type'] = static::LARAVEL_CAST_MAP[$type] ?? ($schema[$key]['type'] ?? 'any');
 
             if ($schema[$key]['type'] === 'any')
                 $schema[$key]['may_struct'] = true;
