@@ -10,6 +10,7 @@ use Doctrine\DBAL\Types\BlobType;
 use Doctrine\DBAL\Types\BooleanType;
 use Doctrine\DBAL\Types\DateTimeType;
 use Doctrine\DBAL\Types\DateType;
+use Doctrine\DBAL\Types\DecimalType;
 use Doctrine\DBAL\Types\FloatType;
 use Doctrine\DBAL\Types\IntegerType;
 use Doctrine\DBAL\Types\SmallIntType;
@@ -133,6 +134,7 @@ class SqlMapper implements Mapper
             case IntegerType::class:
                 return [static::INTEGER_TYPE, false];
 
+            case DecimalType::class:
             case FloatType::class:
                 return [static::FLOAT_TYPE, false];
 
