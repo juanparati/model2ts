@@ -10,10 +10,10 @@ use Juanparati\Model2Ts\Console\GenerateCommand;
  *
  * @package Juanparati\Model2Ts
  */
-class Model2TSServiceProvider extends ServiceProvider {
+class Model2TsServiceProvider extends ServiceProvider {
 
     public function boot() {
         if ($this->app->runningInConsole())
-            $this->commands([GenerateCommand::class,]);
+            $this->commands([GenerateCommand::class]);
     }
 }
